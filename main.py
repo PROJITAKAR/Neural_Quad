@@ -1,12 +1,13 @@
 from crew import admission_crew
-from tools.load_student_data import load_student_data
 from tasks.tasks_function.validate_application_task import validate_application_task
 from tasks.tasks_function.shortlist_candidates_task import shortlist_candidates_task
 from tasks.tasks_function.process_loan_task import process_loan_task
 from tasks.tasks_function.student_notification_task import student_notification_task
 import pandas as pd
 
-
+# Load student data CSV
+def load_student_data(csv_path):
+    return pd.read_csv(csv_path)
 # Running the process
 def run_admission_process(csv_path, doc_folder):
     student_data = load_student_data(csv_path)
