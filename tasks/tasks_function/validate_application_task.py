@@ -1,6 +1,12 @@
-from tools.validate_csv_fields import validate_csv_fields
 from tools.check_documents import check_documents 
 
+# Validate CSV fields (email, marks, etc.)
+def validate_csv_fields(student):
+    if "@" not in student["Email"] or not student["Email"].endswith(('.com', '.org')):
+        return False, "Invalid email format"
+    if not (40 <= student["10th Marks (%)"] <= 100) or not (40 <= student["12th Marks (%)"] <= 100):
+        return False, "Marks out of valid range"
+    return True, "OK"
 # Validate student applications
 def validate_application_task(student, doc_folder):
     valid_csv, csv_message = validate_csv_fields(student)
