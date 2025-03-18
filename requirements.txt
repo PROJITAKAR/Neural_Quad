@@ -1,3 +1,9 @@
+chromadb
+pandas
+langchain
+tiktoken
+numpy
 crewai
+pypdf
 crewai_tools
 python-dotenv
