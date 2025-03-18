@@ -1,0 +1,7 @@
+chromadb
+pandas
+langchain
+tiktoken
+numpy
+crewai
+pypdf
