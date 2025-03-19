@@ -1,0 +1,51 @@
+Student ID,Name,Email,Student Phone,10th Marks (%),12th Marks (%),Father's Name,Mother's Name,Parents Phone,Rank,Family Income,Category,Date of Birth,Gender,Address,Loan Requested
+S001,Vivaan Chopra,vivaan.chopra93@gmail.com,9842430267,49,63,Amit Chopra,Pooja Chopra,9849940058,9955,614252,ST,24-04-2004,F,"379, Park Street, Bangalore",Yes
+S002,Aryan Singh,aryan.singh86@gmail.com,9856731579,89,47,Sanjay Singh,Kiran Singh,9890201371,2706,453139,SC,05-02-2004,F,"57, Park Street, Patna",No
+S003,Vihaan Gupta,vihaan.gupta7@rediffmail.com,9820346423,44,65,Sanjay Gupta,Kiran Gupta,9855516862,3475,235041,SC,18-11-2004,F,"115, Ballygunge, Delhi",Yes
+S004,Vihaan Iyer,vihaan.iyer71@yahoo.com,9813140634,76,81,Rajesh Iyer,Jyoti Iyer,9821991106,7379,844970,GEN,14-05-2005,F,"213, Park Street, Bangalore",Yes
+S005,Kabir Patel,kabir.patel62@yahoo.com,9892479369,99,57,Manoj Patel,Rekha Patel,9836230168,8882,895066,GEN,12-05-2003,F,"215, Rajendra Nagar, Mumbai",Yes
+S006,Vivaan Sharma,vivaan.sharma1@rediffmail.com,9822609048,78,89,Amit Sharma,Pooja Sharma,9878202991,2560,208017,SC,13-05-2004,M,"270, Rajendra Nagar, Bangalore",Yes
+S007,Aditya Nair,aditya.nair4@outlook.com,9875323375,52,96,Vikram Nair,Rekha Nair,9863538815,4468,585564,SC,25-05-2003,F,"494, Park Street, Delhi",No
+S008,Vivaan Patel,vivaan.patel47@yahoo.com,9871128431,87,73,Ravi Patel,Sunita Patel,9891014493,8179,819472,GEN,19-02-2003,M,"189, Connaught Place, Patna",Yes
+S009,Vivaan Patel,vivaan.patel79@outlook.com,9856269851,64,72,Sanjay Patel,Pooja Patel,9810224618,4699,980200,ST,02-02-2004,M,"351, Rajendra Nagar, Mumbai",No
+S010,Aarav Iyer,aarav.iyer79@outlook.com,9843043955,90,41,Mahesh Iyer,Sunita Iyer,9826490599,5139,991641,GEN,09-01-2005,F,"336, Park Street, Mumbai",No
+S011,Aditya Gupta,aditya.gupta6@rediffmail.com,9885155753,48,45,Prakash Gupta,Divya Gupta,9887905058,7322,773293,GEN,18-12-2004,M,"202, Park Street, Delhi",Yes
+S012,Ishaan Gupta,ishaan.gupta13@gmail.com,9820196162,58,63,Amit Gupta,Anjali Gupta,9884766061,7528,441484,ST,24-01-2003,M,"456, Rajendra Nagar, Delhi",No
+S013,Vihaan Singh,vihaan.singh72@yahoo.com,9825067855,77,45,Prakash Singh,Sunita Singh,9888408027,7937,313209,GEN,14-10-2005,M,"6, MG Road, Bangalore",Yes
+S014,Aarav Verma,aarav.verma31@yahoo.com,9879225133,68,64,Prakash Verma,Divya Verma,9820210242,1383,293479,ST,09-12-2005,M,"194, Park Street, Bangalore",Yes
+S015,Rohan Singh,rohan.singh1@yahoo.com,9859912520,76,64,Ravi Singh,Neeta Singh,9870928574,3363,297408,ST,12-09-2004,M,"382, Rajendra Nagar, Bangalore",Yes
+S016,Aditya Chopra,aditya.chopra27@outlook.com,9849412770,93,74,Suresh Chopra,Jyoti Chopra,9882051070,6165,835286,SC,19-12-2002,M,"484, Ballygunge, Delhi",No
+S017,Kartik Chopra,kartik.chopra44@rediffmail.com,9897466617,81,82,Amit Chopra,Meena Chopra,9837554872,6036,853097,GEN,01-09-2005,F,"290, Connaught Place, Kolkata",Yes
+S018,Vivaan Iyer,vivaan.iyer94@yahoo.com,9877971816,69,86,Vikram Iyer,Meena Iyer,9822089495,2630,267032,SC,13-06-2003,F,"490, Connaught Place, Kolkata",Yes
+S019,Aditya Sharma,aditya.sharma97@rediffmail.com,9834371827,97,59,Prakash Sharma,Sunita Sharma,9890276916,7264,830946,SC,17-09-2005,F,"296, Ballygunge, Bangalore",No
+S020,Vivaan Gupta,vivaan.gupta4@outlook.com,9814940569,96,95,Rajesh Gupta,Lata Gupta,9853392652,8510,313406,ST,08-07-2003,M,"468, Rajendra Nagar, Bangalore",Yes
+S021,Kabir Sharma,kabir.sharma79@gmail.com,9862091574,40,47,Vikram Sharma,Anjali Sharma,9821133274,7477,542646,ST,11-11-2005,M,"280, Connaught Place, Bangalore",No
+S022,Arjun Reddy,arjun.reddy97@rediffmail.com,9832006212,52,62,Prakash Reddy,Jyoti Reddy,9867956839,8322,765130,SC,23-07-2003,F,"492, Ballygunge, Bangalore",Yes
+S023,Ishaan Nair,ishaan.nair64@gmail.com,9885590013,69,50,Sanjay Nair,Neeta Nair,9857331515,5284,869538,ST,16-09-2004,F,"49, Connaught Place, Mumbai",No
+S024,Ishaan Nair,ishaan.nair51@yahoo.com,9885273651,59,54,Amit Nair,Kiran Nair,9861047984,2575,339767,SC,16-02-2003,M,"210, Rajendra Nagar, Patna",Yes
+S025,Kabir Singh,kabir.singh71@outlook.com,9886386777,54,76,Anil Singh,Neeta Singh,9842753982,7483,213442,ST,01-05-2004,M,"363, Ballygunge, Patna",Yes
+S026,Ishaan Patel,ishaan.patel96@gmail.com,9874054127,75,46,Rajesh Patel,Rekha Patel,9873121249,5679,777992,SC,07-05-2002,F,"192, Connaught Place, Mumbai",Yes
+S027,Ishaan Menon,ishaan.menon48@yahoo.com,9870176805,84,52,Amit Menon,Pooja Menon,9890523104,1369,280575,SC,06-10-2002,M,"487, MG Road, Kolkata",Yes
+S028,Kartik Nair,kartik.nair97@outlook.com,9845468218,49,43,Ravi Nair,Neeta Nair,9888856266,3989,210947,ST,18-01-2004,M,"184, Ballygunge, Delhi",Yes
+S029,Kartik Nair,kartik.nair94@gmail.com,9872204812,60,77,Mahesh Nair,Pooja Nair,9881026196,9242,402009,SC,10-08-2002,F,"446, Connaught Place, Mumbai",No
+S030,Aditya Singh,aditya.singh22@outlook.com,9839070674,70,64,Manoj Singh,Neeta Singh,9883718101,7701,850591,GEN,24-07-2002,M,"193, Rajendra Nagar, Kolkata",Yes
+S031,Aryan Patel,aryan.patel50@rediffmail.com,9866533242,86,68,Suresh Patel,Divya Patel,9860781609,9113,696616,GEN,04-12-2004,M,"81, Park Street, Bangalore",Yes
+S032,Aditya Menon,aditya.menon22@outlook.com,9822031149,54,48,Sanjay Menon,Anjali Menon,9846098455,6217,403887,ST,13-12-2003,M,"55, Ballygunge, Kolkata",No
+S033,Kabir Singh,kabir.singh40@gmail.com,9838741990,84,44,Rajesh Singh,Rekha Singh,9875130383,1761,489468,GEN,02-06-2005,F,"6, Rajendra Nagar, Kolkata",Yes
+S034,Kartik Nair,kartik.nair45@gmail.com,9878830950,87,41,Rajesh Nair,Kiran Nair,9892540853,4404,793752,SC,18-03-2003,M,"432, Ballygunge, Mumbai",No
+S035,Aarav Singh,aarav.singh48@rediffmail.com,9821830753,71,95,Prakash Singh,Lata Singh,9879645558,4376,794565,GEN,12-10-2003,M,"184, Ballygunge, Delhi",Yes
+S036,Aditya Singh,aditya.singh62@gmail.com,9822585865,54,73,Prakash Singh,Divya Singh,9860989925,7321,470175,SC,07-01-2005,F,"201, Rajendra Nagar, Mumbai",Yes
+S037,Vihaan Gupta,vihaan.gupta96@gmail.com,9845354337,58,83,Manoj Gupta,Rekha Gupta,9842598093,7265,674363,ST,05-03-2005,F,"407, Park Street, Mumbai",No
+S038,Kartik Singh,kartik.singh24@gmail.com,9829237657,62,80,Mahesh Singh,Rekha Singh,9828635872,1811,640343,GEN,20-08-2003,M,"277, Connaught Place, Kolkata",Yes
+S039,Vihaan Menon,vihaan.menon97@outlook.com,9829991142,77,93,Anil Menon,Jyoti Menon,9872745720,4574,569854,ST,14-01-2005,M,"149, Rajendra Nagar, Delhi",No
+S040,Aryan Iyer,aryan.iyer2@yahoo.com,9895699661,99,59,Amit Iyer,Jyoti Iyer,9879121045,2613,570192,SC,22-11-2003,M,"209, Connaught Place, Patna",No
+S041,Arjun Gupta,arjun.gupta23@yahoo.com,9891754558,76,59,Anil Gupta,Sunita Gupta,9811755005,6522,672866,ST,05-02-2005,F,"82, Connaught Place, Kolkata",Yes
+S042,Arjun Patel,arjun.patel15@outlook.com,9816531516,80,69,Manoj Patel,Sunita Patel,9860795147,9728,894648,SC,24-12-2004,F,"296, MG Road, Kolkata",No
+S043,Vivaan Chopra,vivaan.chopra92@gmail.com,9876155050,66,43,Rajesh Chopra,Divya Chopra,9890006078,6511,219948,ST,20-05-2005,M,"308, Park Street, Delhi",Yes
+S044,Ishaan Sharma,ishaan.sharma64@rediffmail.com,9889334580,55,82,Rajesh Sharma,Kiran Sharma,9865717832,1126,415452,GEN,11-02-2002,F,"4, MG Road, Kolkata",No
+S045,Vivaan Nair,vivaan.nair19@gmail.com,9823083390,82,62,Mahesh Nair,Lata Nair,9887357770,7049,372322,SC,19-12-2002,M,"288, Connaught Place, Mumbai",Yes
+S046,Vihaan Nair,vihaan.nair50@rediffmail.com,9826231101,96,88,Anil Nair,Sunita Nair,9866541862,6606,881430,ST,18-07-2003,F,"74, Connaught Place, Mumbai",No
+S047,Vivaan Patel,vivaan.patel87@outlook.com,9812866413,67,58,Manoj Patel,Meena Patel,9899657992,9599,328332,ST,23-03-2003,M,"401, Rajendra Nagar, Bangalore",Yes
+S048,Rohan Singh,rohan.singh97@yahoo.com,9818224987,82,52,Ravi Singh,Pooja Singh,9850125552,4531,301745,SC,26-04-2002,F,"206, Rajendra Nagar, Kolkata",No
+S049,Kabir Reddy,kabir.reddy62@rediffmail.com,9872201202,52,99,Amit Reddy,Anjali Reddy,9893505147,5681,520015,SC,23-05-2003,F,"138, Rajendra Nagar, Bangalore",Yes
+S050,Vihaan Gupta,vihaan.gupta59@rediffmail.com,9821557967,87,47,Ravi Gupta,Pooja Gupta,9820610279,9601,935722,ST,28-03-2002,F,"454, Park Street, Patna",No
