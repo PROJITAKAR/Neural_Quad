@@ -1,4 +1,10 @@
-from tools.check_documents import check_documents 
+# tasks.py
+from langchain.document_loaders import PyPDFLoader
+import pandas as pd
+import os
+from tools import check_documents
+def load_student_data(csv_path):
+    return pd.read_csv(csv_path)
 
 import re
 from datetime import datetime
@@ -17,15 +23,15 @@ def validate_csv_fields(student):
         return False, "Invalid email format"
 
     # Validate Phone Numbers (Student & Parents)
-    if not re.match(r"^\d{10}$", student["Student Phone"]):
+    if not re.match(r"^\d{10}$", str(student["Student Phone"])):
         return False, "Invalid Student Phone"
-    if not re.match(r"^\d{10}$", student["Parents Phone"]):
+    if not re.match(r"^\d{10}$", str(student["Parents Phone"])):
         return False, "Invalid Parents Phone"
 
     # Validate Marks (10th & 12th) in range 40-100
-    if not (40 <= student["10th Marks (%)"] <= 100):
+    if not (40 <= float(student["10th Marks (%)"]) <= 100):
         return False, "10th Marks out of range"
-    if not (40 <= student["12th Marks (%)"] <= 100):
+    if not (40 <= float(student["12th Marks (%)"] )<= 100):
         return False, "12th Marks out of range"
 
     # Validate Rank (positive integer)
@@ -37,21 +43,22 @@ def validate_csv_fields(student):
         return False, "Invalid Family Income"
 
     # Validate Category (Predefined categories)
-    valid_categories = {"General", "SC", "ST", "OBC"}
+    valid_categories = {"GEN", "SC", "ST", "OBC"}
     if student["Category"] not in valid_categories:
         return False, "Invalid Category"
 
     # Validate Date of Birth (YYYY-MM-DD) and Age
     try:
-        dob = datetime.strptime(student["Date of Birth"], "%Y-%m-%d")
+        dob = datetime.strptime(student["Date of Birth"], "%d-%m-%Y")  # Fix format
         age = (datetime.today() - dob).days // 365
         if not (17 <= age <= 22):
             return False, "Invalid Age"
     except ValueError:
         return False, "Invalid Date of Birth format"
 
+
     # Validate Gender
-    if student["Gender"] not in {"Male", "Female", "Other"}:
+    if student["Gender"] not in {"M", "F", "Other"}:
         return False, "Invalid Gender"
 
     # Validate Address (Non-empty)
@@ -63,11 +70,13 @@ def validate_csv_fields(student):
         return False, "Invalid Loan Requested value"
 
     return True, "OK"
-# Validate student applications
-def validate_application_task(student, doc_folder):
+
+
+
+
+def validate_application_task(student_id, doc_folder, student):
     valid_csv, csv_message = validate_csv_fields(student)
-    missing_docs = check_documents(student["Student ID"], doc_folder)
-    
+    missing_docs = check_documents(student_id, doc_folder, student)
     if valid_csv and missing_docs == "OK":
         return "OK"
     else:
