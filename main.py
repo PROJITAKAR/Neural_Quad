@@ -48,8 +48,7 @@ if __name__ == "__main__":
 #     results = []
     
 #     for _, student in student_data.iterrows():
-#         doc_status = validate_application_task(student, doc_folder)
-        
+#         doc_status = validate_application_task(student["Student ID"], doc_folder, student)  # ✅ Pass student_id
 #         results.append({
 #             "Student ID": student["Student ID"],
 #             "Document Status": doc_status

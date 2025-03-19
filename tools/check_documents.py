@@ -48,8 +48,10 @@ def check_documents(student_id, doc_folder, student_info):
             continue
 
         if doc == "id_proof.pdf":
+            dob = str(student_info["Date of Birth"])  # Convert to string before checking
             if student_name not in text or dob not in text:
                 missing_docs.append(f"{doc} (mismatch: Name/DOB)")
+
 
         if doc == "rank_card.pdf":
             if student_name not in text or dob not in text or rank not in text:
