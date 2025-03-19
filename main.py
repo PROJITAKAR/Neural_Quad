@@ -41,3 +41,25 @@ if __name__ == "__main__":
     csv_path = "student_records.csv"
     doc_folder = "docs"
     run_admission_process(csv_path, doc_folder)
+    
+    
+# def run_document_checking(csv_path, doc_folder):
+#     student_data = load_student_data(csv_path)
+#     results = []
+    
+#     for _, student in student_data.iterrows():
+#         doc_status = validate_application_task(student, doc_folder)
+        
+#         results.append({
+#             "Student ID": student["Student ID"],
+#             "Document Status": doc_status
+#         })
+    
+#     results_df = pd.DataFrame(results)
+#     results_df.to_csv("document_check_results.csv", index=False)
+#     print("Document checking process completed. Results saved to document_check_results.csv")
+
+# if __name__ == "__main__":
+#     csv_path = "student_records.csv"
+#     doc_folder = "student_docs"
+#     run_document_checking(csv_path, doc_folder)
