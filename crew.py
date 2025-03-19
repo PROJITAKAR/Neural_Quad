@@ -13,3 +13,8 @@ from tasks.task_definition.student_loan_task import student_loan_task
 # Crew Definition
 admission_crew = Crew(agents=[admission_officer, document_checking_agent, shortlisting_agent, student_counselor, student_loan_agent],
                       tasks=[document_checking_task, shortlisting_task, student_counseling_task, student_loan_task])
+
+# document_checking_crew = Crew(
+#     agents=[document_checking_agent],
+#     tasks=[document_checking_task]
+# )
