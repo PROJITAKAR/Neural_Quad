@@ -7,3 +7,4 @@ crewai
 pypdf
 crewai_tools
 python-dotenv
+google-generativeai
