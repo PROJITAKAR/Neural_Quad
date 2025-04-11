@@ -1,70 +1,61 @@
 import os
-import re
+from langchain_community.document_loaders import PyPDFLoader
+from crewai.tools import BaseTool
 from langchain.document_loaders import PyPDFLoader
+from pydantic import Field
+import time
 
-def extract_text_from_pdf(file_path):
-    """Extract text from a given PDF file using LangChain's PyPDFLoader."""
-    try:
-        loader = PyPDFLoader(file_path)
-        pages = loader.load()
-        text = "\n".join([page.page_content for page in pages if page.page_content])
-        return text.strip() if text else None
-    except Exception:
-        return None
+# Required documents list
+REQUIRED_DOCS = ["10th_marksheet.pdf", "12th_marksheet.pdf", "id_proof.pdf", "rank_card.pdf"]
+OPTIONAL_DOCS = ["salary_slip.pdf"]  
+ 
 
-def extract_marks_from_text(text):
-    """Extracts subject-wise marks and calculates percentage."""
-    subject_marks = re.findall(r"(\w+):\s*(\d{1,3})/(\d{1,3})", text)  # Example: "Math: 85/100"
-    total_obtained = sum(int(marks) for _, marks, _ in subject_marks)
-    total_max = sum(int(max_marks) for _, _, max_marks in subject_marks)
-    
-    if total_max > 0:
-        percentage = (total_obtained / total_max) * 100
-        return percentage
-    return None
+# Define a tool to load PDFs for all students and validate missing ones
+class BatchPDFLoaderTool(BaseTool):
+    name: str = "Batch PDF Loader"
+    description: str = "Loads and extracts text from all student documents in the given directory and checks for missing documents."
 
-def check_documents(student_id, doc_folder, student_info):
-    """Checks if required student documents are present, readable, and valid."""
-    student_doc_folder = os.path.join(doc_folder, str(student_id))
-    required_docs = ["10th_marksheet.pdf", "12th_marksheet.pdf", "id_proof.pdf", "rank_card.pdf"]
-    missing_docs = []
+    doc_folder: str = Field(..., description="Path to the student documents folder.")
 
-    student_name = student_info["Name"]
-    dob = student_info["Date of Birth"]
-    rank = str(student_info["Rank"])
-    marks_10th = student_info["10th Marks (%)"]
-    marks_12th = student_info["12th Marks (%)"]
+    def _run(self):
+        """Loads PDFs from all student document folders and checks for missing files."""
+        extracted_texts = {}
 
-    for doc in required_docs:
-        file_path = os.path.join(student_doc_folder, doc)
-        
-        if not os.path.exists(file_path):
-            missing_docs.append(f"{doc} (missing)")
-            continue
-        
-        text = extract_text_from_pdf(file_path)
-        if not text:
-            missing_docs.append(f"{doc} (unreadable)")
-            continue
+        for student_id in os.listdir(self.doc_folder):
+            student_doc_folder = os.path.join(self.doc_folder, student_id)
+            if os.path.isdir(student_doc_folder):
+                extracted_texts[student_id] = {}
+                missing_docs = []
 
-        if doc == "id_proof.pdf":
-            dob = str(student_info["Date of Birth"])  # Convert to string before checking
-            if student_name not in text or dob not in text:
-                missing_docs.append(f"{doc} (mismatch: Name/DOB)")
+                for doc_name in REQUIRED_DOCS:
+                    file_path = os.path.join(student_doc_folder, doc_name)
+                    if os.path.exists(file_path):  # Check if the document exists
+                        try:
+                            loader = PyPDFLoader(file_path)
+                            pages = loader.load()
+                            extracted_texts[student_id][doc_name] = "\n".join(
+                                [page.page_content for page in pages if page.page_content]
+                            )
+                        except Exception as e:
+                            extracted_texts[student_id][doc_name] = f"Error loading file: {str(e)}"
+                    else:
+                        missing_docs.append(doc_name)
+                for doc_name in OPTIONAL_DOCS:
+                    file_path = os.path.join(student_doc_folder, doc_name)
+                    if os.path.exists(file_path):
+                        try:
+                            loader = PyPDFLoader(file_path)
+                            pages = loader.load()
+                            extracted_texts[student_id][doc_name] = "\n".join(
+                                [page.page_content for page in pages if page.page_content]
+                            )
+                        except Exception as e:
+                            extracted_texts[student_id][doc_name] = f"Error loading optional file: {str(e)}"
+                # If any document is missing, record it
+                if missing_docs:
+                    extracted_texts[student_id]["missing_docs"] = f"Missing: {', '.join(missing_docs)}"
 
+                time.sleep(0.5)  # Delay after processing each student
 
-        if doc == "rank_card.pdf":
-            if student_name not in text or dob not in text or rank not in text:
-                missing_docs.append(f"{doc} (mismatch: Name/DOB/Rank)")
-
-        if doc == "10th_marksheet.pdf":
-            extracted_10th_percentage = extract_marks_from_text(text)
-            if extracted_10th_percentage and abs(extracted_10th_percentage - marks_10th) > 2:
-                missing_docs.append(f"{doc} (Marks mismatch: Expected {marks_10th}, Found {extracted_10th_percentage:.2f})")
-
-        if doc == "12th_marksheet.pdf":
-            extracted_12th_percentage = extract_marks_from_text(text)
-            if extracted_12th_percentage and abs(extracted_12th_percentage - marks_12th) > 2:
-                missing_docs.append(f"{doc} (Marks mismatch: Expected {marks_12th}, Found {extracted_12th_percentage:.2f})")
-
-    return missing_docs if missing_docs else "OK"
+        time.sleep(1)  # Extra delay after all documents are loaded
+        return extracted_texts
