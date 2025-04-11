@@ -12,6 +12,7 @@ load_dotenv(dotenv_path=dotenv_path)
 
 
 
-SENDER_EMAIL = os.getenv("SENDER_EMAIL")
-SENDER_PASSWORD = os.getenv("SENDER_PASSWORD")
+SENDER_EMAIL = os.getenv("EMAIL")
+SENDER_PASSWORD = os.getenv("PASSWORD")
 GEMINI_API_KEY= os.getenv("GEMINI_API_KEY")
+TO_EMAIL = os.getenv("TO_EMAIL")
